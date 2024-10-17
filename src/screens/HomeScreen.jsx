@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native'; 
+import { StyleSheet, View, StatusBar } from 'react-native'; 
+import { FirstPage } from '../components/FirstPage';
 
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <FirstPage/>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,7 +14,7 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#333',
     alignItems: 'center',
     justifyContent: 'center',
   },
