@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 const Tab = createBottomTabNavigator();
+
 export const ButtonTabNavigators = () => {
   return (
     <Tab.Navigator
@@ -21,17 +22,12 @@ export const ButtonTabNavigators = () => {
           height: 60,
           paddingTop: 10,
           shadowColor: "#fff",
-          shadowOffset: {
-            width: 1,
-            height: 1,
-          },
+          shadowOffset: { width: 1, height: 1 },
           shadowOpacity: 0.27,
           shadowRadius: 4.65,
           elevation: 3,
         },
-        tabBarLabelStyle: {
-          display: "none",
-        },
+        tabBarLabelStyle: { display: "none" },
         tabBarItemStyle: {
           flex: 1,
           alignItems: "center",
@@ -39,20 +35,19 @@ export const ButtonTabNavigators = () => {
         },
       }}
     >
-      <Tab.Screen 
-        name="Home" 
-        component={HomeScreen} 
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
         options={{
-            tabBarIcon: ({ focused }) => (
-              <MaterialCommunityIcons
-                name="face-man-profile"
-                size={focused ? 35 : 25}
-                color={focused ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.5)"}
-              />
-            ),
-            
-          }}
-    />
+          tabBarIcon: ({ focused }) => (
+            <MaterialCommunityIcons
+              name="face-man-profile"
+              size={focused ? 35 : 25}
+              color={focused ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.5)"}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

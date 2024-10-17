@@ -11,23 +11,22 @@ const affirmations = [
 ];
 
 export const FirstPage = () => {
-  const [index, setIndex] = useState(0); // Estado para el índice de la afirmación actual
+  const [index, setIndex] = useState(0);
 
-  // Cambiar a la siguiente afirmación
   const nextAffirmation = () => {
     setIndex((prevIndex) => (prevIndex + 1) % affirmations.length);
   };
 
   return (
-    <ImageBackground 
-      source={require('../assets/mockup1.jpg')} // Asegúrate de cambiar la ruta a tu imagen
-      style={styles.container}
-      imageStyle={{ resizeMode: 'cover' }} // Asegurarte de que la imagen cubra todo el fondo
+    <ImageBackground
+      source={require('../assets/mockup1.jpg')}
+      style={styles.backgroundImage}
+      imageStyle={{ resizeMode: 'cover' }}
     >
       <View style={styles.innerContainer}>
         <Text style={styles.affirmationText}>{affirmations[index]}</Text>
         <TouchableOpacity style={styles.button} onPress={nextAffirmation}>
-          <Text style={styles.buttonText}>Siguiente Afirmación</Text>
+          <Text style={styles.buttonText}>Siguiente</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -35,33 +34,34 @@ export const FirstPage = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  backgroundImage: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center', 
+    width: '100%',
   },
   innerContainer: {
-    flex: 1, // Permite que el innerContainer ocupe todo el espacio disponible
-    backgroundColor: "rgba(255, 255, 255, 0.8)", // Fondo blanco semi-transparente para el texto
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: '90%',
+    //backgroundColor: 'rgba(255, 255, 255, 0.8)',
     padding: 20,
     borderRadius: 25,
-    margin: 5,
+    alignItems: 'center', 
   },
   affirmationText: {
     fontSize: 24,
     textAlign: 'center',
-    marginBottom: 20,
     color: 'black',
-    paddingHorizontal: 10, // Para evitar que el texto toque los bordes
+    marginBottom: 150, 
   },
   button: {
-    backgroundColor: '#6200EE', // Color del botón
+    backgroundColor: '#c2da7c',
     padding: 15,
     borderRadius: 25,
+    width: '60%', 
+    alignItems: 'center', 
   },
   buttonText: {
     color: 'white',
     fontSize: 18,
-    textAlign: 'center',
   },
 });

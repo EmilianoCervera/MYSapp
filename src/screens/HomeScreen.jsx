@@ -1,21 +1,21 @@
 import React from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native'; 
+import { StyleSheet, View, StatusBar } from 'react-native';
 import { FirstPage } from '../components/FirstPage';
 
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <FirstPage/>
+      <FirstPage />
       <StatusBar style="auto" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333',
-    alignItems: 'center',
+    backgroundColor: '#333', // Color de fondo para fallback
     justifyContent: 'center',
+    alignItems: 'center',
   },
 });
